@@ -31,5 +31,25 @@ namespace Knapsack_problem
         {
             lbProcessorUsage.Text =  processorUsage.getCurrentCpuUsage();
         }
+
+        private void tbRecursion_Click(object sender, EventArgs e)
+        {
+            int[] inputNumbers; //označenia nechavam rovnako ako čísla
+            int result;
+
+            inputNumbers = new int[6];
+
+            //input test
+            inputNumbers[0] = 8;
+            inputNumbers[1] = 9;
+            inputNumbers[2] = 7;
+            inputNumbers[3] = 6;
+            inputNumbers[4] = 5;
+            inputNumbers[5] = 4;
+
+            Recursion recursion = new Recursion();
+            result = (recursion.knapsack(inputNumbers, inputNumbers, 38, 0));
+            rtbInformation.Text = result.ToString();
+        }
     }
 }

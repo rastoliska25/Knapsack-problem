@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inicialization.cs" />
     <Compile Include="KnapSackGraphic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +57,7 @@
     <Compile Include="ProcessorUsage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursion.cs" />
     <EmbeddedResource Include="KnapSackGraphic.resx">
       <DependentUpon>KnapSackGraphic.cs</DependentUpon>
     </EmbeddedResource>
