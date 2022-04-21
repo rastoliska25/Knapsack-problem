@@ -8,18 +8,29 @@ namespace Knapsack_problem
 {
     internal class Recursion
     {
-        public int knapsack(int[] inputNumberArray, int[] inputNumberArrayValue, int itemsQuantity, int itemNumber) //inputNumberArray = inputNumberArrayValue - nazov zodpoveda hodnote
+
+        private int knapsack(int[] inputNumberArray, int maxNumber, int itemNumber)
         {
-            if (itemsQuantity == 0 || itemNumber == inputNumberArray.Length)
+            if (maxNumber == 0 || itemNumber == inputNumberArray.Length)
             {
                 return 0;
             }
-            if (inputNumberArray[itemNumber] > itemsQuantity)
-                return knapsack(inputNumberArray, inputNumberArrayValue, itemsQuantity, itemNumber + 1);
+            if (inputNumberArray[itemNumber] > maxNumber)
+                return knapsack(inputNumberArray, maxNumber, itemNumber + 1);
 
-            int rMax = inputNumberArrayValue[itemNumber] + knapsack(inputNumberArray, inputNumberArrayValue, itemsQuantity - inputNumberArray[itemNumber], itemNumber + 1);
-            int lMax = knapsack(inputNumberArray, inputNumberArrayValue, itemsQuantity, itemNumber + 1);
-            return Math.Max(rMax, lMax);
+            int rValue = inputNumberArray[itemNumber] + knapsack(inputNumberArray, maxNumber - inputNumberArray[itemNumber], itemNumber + 1);
+
+            return rValue;
+        }
+
+        public string itemsUsed(int[] inputNumberArray, int maxNumber, int itemNumber)
+        {
+            int resultNumber;
+            string result;
+            resultNumber = knapsack(inputNumberArray, maxNumber, itemNumber);
+
+            result = "Max number created from inserted numbers: " + resultNumber.ToString() + "\n\n" + "From numbers: " + (inputNumberArray[itemNumber]).ToString();
+            return result;
         }
     }
 }

@@ -34,22 +34,22 @@ namespace Knapsack_problem
 
         private void tbRecursion_Click(object sender, EventArgs e)
         {
-            int[] inputNumbers; //označenia nechavam rovnako ako čísla
-            int result;
+            int[] inputNumbers; 
+            string result;
+            int i = 5;
 
-            inputNumbers = new int[6];
+            Random random = new Random();
+            inputNumbers = new int[i];
 
             //input test
-            inputNumbers[0] = 8;
-            inputNumbers[1] = 9;
-            inputNumbers[2] = 7;
-            inputNumbers[3] = 6;
-            inputNumbers[4] = 5;
-            inputNumbers[5] = 4;
+            for (int j = 0; j < inputNumbers.Length; j++)
+            {
+                inputNumbers[j] = random.Next(100, 800);
+            }
 
             Recursion recursion = new Recursion();
-            result = (recursion.knapsack(inputNumbers, inputNumbers, 38, 0));
-            rtbInformation.Text = result.ToString();
+            result = (recursion.itemsUsed(inputNumbers, 10000, 0));
+            rtbInformation.Text = result;
         }
     }
 }
