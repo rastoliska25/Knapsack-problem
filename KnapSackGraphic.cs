@@ -29,27 +29,29 @@ namespace Knapsack_problem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbProcessorUsage.Text =  processorUsage.getCurrentCpuUsage();
+            lbProcessorUsage.Text = processorUsage.getCurrentCpuUsage();
         }
 
         private void tbRecursion_Click(object sender, EventArgs e)
         {
-            int[] inputNumbers; 
+            int[] inputNumbers;
+            string inputNumbersS = "";
             string result;
-            int i = 5;
+            int i = 10;
 
             Random random = new Random();
             inputNumbers = new int[i];
 
-            //input test
+            //input
             for (int j = 0; j < inputNumbers.Length; j++)
             {
                 inputNumbers[j] = random.Next(100, 800);
+                inputNumbersS = inputNumbersS + "   " + inputNumbers[j].ToString();
             }
 
             Recursion recursion = new Recursion();
-            result = (recursion.itemsUsed(inputNumbers, 10000, 0));
-            rtbInformation.Text = result;
+            result = (recursion.itemsUsed(inputNumbers, 3500, 0));
+            rtbInformation.Text = "Inserted numbers: " + inputNumbersS + "\n\n" + result;
         }
     }
 }

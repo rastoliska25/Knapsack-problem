@@ -8,7 +8,8 @@ namespace Knapsack_problem
 {
     internal class Recursion
     {
-
+        string items = "";
+        int item;
         private int knapsack(int[] inputNumberArray, int maxNumber, int itemNumber)
         {
             if (maxNumber == 0 || itemNumber == inputNumberArray.Length)
@@ -18,6 +19,8 @@ namespace Knapsack_problem
             if (inputNumberArray[itemNumber] > maxNumber)
                 return knapsack(inputNumberArray, maxNumber, itemNumber + 1);
 
+            item = inputNumberArray[itemNumber];
+            items = items + "   " + item.ToString();
             int rValue = inputNumberArray[itemNumber] + knapsack(inputNumberArray, maxNumber - inputNumberArray[itemNumber], itemNumber + 1);
 
             return rValue;
@@ -25,11 +28,8 @@ namespace Knapsack_problem
 
         public string itemsUsed(int[] inputNumberArray, int maxNumber, int itemNumber)
         {
-            int resultNumber;
-            string result;
-            resultNumber = knapsack(inputNumberArray, maxNumber, itemNumber);
-
-            result = "Max number created from inserted numbers: " + resultNumber.ToString() + "\n\n" + "From numbers: " + (inputNumberArray[itemNumber]).ToString();
+            int resultNumber = knapsack(inputNumberArray, maxNumber, itemNumber);
+            string result = "Sum of numbers combination created from inserted numbers: " + resultNumber.ToString() + "\n\n" + "Selected numbers combination: " + items;
             return result;
         }
     }
