@@ -30,6 +30,7 @@ namespace Knapsack_problem
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbProcessorUsage.Text = processorUsage.getCurrentCpuUsage();
+            lbRamUsage.Text = processorUsage.getAvailableRAM();
         }
 
         private void tbRecursion_Click(object sender, EventArgs e)
@@ -52,6 +53,12 @@ namespace Knapsack_problem
             Recursion recursion = new Recursion();
             result = (recursion.itemsUsed(inputNumbers, 3500, 0));
             rtbInformation.Text = "Inserted numbers: " + inputNumbersS + "\n\n" + result;
+        }
+
+        private void KnapSackGraphic_Load(object sender, EventArgs e)
+        {
+            lbProcessorUsage.Text = "";
+            lbRamUsage.Text = "";
         }
     }
 }

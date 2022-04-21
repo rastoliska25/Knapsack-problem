@@ -20,15 +20,13 @@ namespace Knapsack_problem
         public string getCurrentCpuUsage()
         {
             cpuCounter.NextValue();
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(100);
             return cpuCounter.NextValue() + "%";
         }
 
         public string getAvailableRAM()
         {
-            cpuCounter.NextValue();
-            System.Threading.Thread.Sleep(1000);
-            return ramCounter.NextValue() + "MB";
+            return ramCounter.NextValue() + " MB";
         }
     }
 }
