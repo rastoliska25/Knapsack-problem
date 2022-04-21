@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartCPU = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btShowCpuUsage = new System.Windows.Forms.Button();
             this.lbProcessorUsage = new System.Windows.Forms.Label();
@@ -45,23 +45,23 @@
             // 
             // chartCPU
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartCPU.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartCPU.Legends.Add(legend3);
-            this.chartCPU.Location = new System.Drawing.Point(544, 66);
+            chartArea1.Name = "ChartArea1";
+            this.chartCPU.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartCPU.Legends.Add(legend1);
+            this.chartCPU.Location = new System.Drawing.Point(445, 66);
             this.chartCPU.Name = "chartCPU";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartCPU.Series.Add(series3);
-            this.chartCPU.Size = new System.Drawing.Size(232, 79);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartCPU.Series.Add(series1);
+            this.chartCPU.Size = new System.Drawing.Size(331, 79);
             this.chartCPU.TabIndex = 0;
             this.chartCPU.Text = "chart1";
             // 
             // btShowCpuUsage
             // 
-            this.btShowCpuUsage.Location = new System.Drawing.Point(411, 70);
+            this.btShowCpuUsage.Location = new System.Drawing.Point(323, 70);
             this.btShowCpuUsage.Name = "btShowCpuUsage";
             this.btShowCpuUsage.Size = new System.Drawing.Size(107, 23);
             this.btShowCpuUsage.TabIndex = 1;
@@ -72,7 +72,7 @@
             // lbProcessorUsage
             // 
             this.lbProcessorUsage.AutoSize = true;
-            this.lbProcessorUsage.Location = new System.Drawing.Point(408, 96);
+            this.lbProcessorUsage.Location = new System.Drawing.Point(320, 96);
             this.lbProcessorUsage.Name = "lbProcessorUsage";
             this.lbProcessorUsage.Size = new System.Drawing.Size(93, 13);
             this.lbProcessorUsage.TabIndex = 2;
@@ -114,7 +114,7 @@
             // lbRamUsage
             // 
             this.lbRamUsage.AutoSize = true;
-            this.lbRamUsage.Location = new System.Drawing.Point(408, 122);
+            this.lbRamUsage.Location = new System.Drawing.Point(320, 122);
             this.lbRamUsage.Name = "lbRamUsage";
             this.lbRamUsage.Size = new System.Drawing.Size(68, 13);
             this.lbRamUsage.TabIndex = 6;

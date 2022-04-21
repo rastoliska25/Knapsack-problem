@@ -23,13 +23,20 @@ namespace Knapsack_problem
             ProcessorUsage processorUsage = new ProcessorUsage();
             this.processorUsage = processorUsage;
 
+
+            /* chartCPU.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            chartCPU.ChartAreas[0].AxisY.LabelStyle.Format = "%"; */
             //lbProcessorUsage.Text = "Processor usage : " + processorUsage.getCurrentCpuUsage();
             timerCpu.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbProcessorUsage.Text = processorUsage.getCurrentCpuUsage();
+            float CpuUsage;
+            CpuUsage = processorUsage.getCurrentCpuUsage();
+            lbProcessorUsage.Text = CpuUsage.ToString("0.0000") + "%";
+            chartCPU.Series[0].Points.AddY(CpuUsage);
+
             lbRamUsage.Text = processorUsage.getAvailableRAM();
         }
 
