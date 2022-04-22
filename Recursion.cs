@@ -10,26 +10,30 @@ namespace Knapsack_problem
     {
         string items = "";
         int item;
-        private int knapsack(int[] inputNumberArray, int maxNumber, int itemNumber)
+
+        private int max(int a, int b)
         {
-            if (maxNumber == 0 || itemNumber == inputNumberArray.Length)
-            {
-                return 0;
-            }
-            if (inputNumberArray[itemNumber] > maxNumber)
-                return knapsack(inputNumberArray, maxNumber, itemNumber + 1);
-
-            item = inputNumberArray[itemNumber];
-            items = items + "   " + item.ToString();
-            int rValue = inputNumberArray[itemNumber] + knapsack(inputNumberArray, maxNumber - inputNumberArray[itemNumber], itemNumber + 1);
-
-            return rValue;
+            return (a > b) ? a : b;
         }
 
-        public string itemsUsed(int[] inputNumberArray, int maxNumber, int itemNumber)
+        private int knapSack(int[] inputNumberArray, int maxNumber, int itemsCount)
         {
-            int resultNumber = knapsack(inputNumberArray, maxNumber, itemNumber);
-            string result = "Sum of numbers combination created from inserted numbers: " + resultNumber.ToString() + "\n\n" + "Selected numbers combination: " + items;
+            if (itemsCount == 0 || maxNumber == 0)
+                return 0;
+
+            if (inputNumberArray[itemsCount - 1] > maxNumber)
+                return knapSack(inputNumberArray, maxNumber, itemsCount - 1);
+
+            else
+                return max(inputNumberArray[itemsCount - 1]
+                           + knapSack(inputNumberArray, maxNumber - inputNumberArray[itemsCount - 1], itemsCount - 1),
+                           knapSack(inputNumberArray, maxNumber, itemsCount - 1));
+        }
+
+        public string itemsUsed(int[] inputNumberArray, int maxNumber, int itemsCount)
+        {
+            int resultNumber = knapSack(inputNumberArray, maxNumber, itemsCount);
+            string result = "Sum of numbers combination created from inserted numbers: " + resultNumber.ToString();// + "\n\n" + "Selected numbers combination: " + items;
             return result;
         }
     }

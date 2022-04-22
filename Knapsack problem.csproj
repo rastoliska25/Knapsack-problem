@@ -64,6 +64,7 @@
     <Compile Include="KnapSackGraphic.Designer.cs">
       <DependentUpon>KnapSackGraphic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Memoization.cs" />
     <Compile Include="ProcessorUsage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

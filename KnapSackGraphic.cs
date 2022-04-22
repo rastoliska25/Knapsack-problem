@@ -22,11 +22,6 @@ namespace Knapsack_problem
         {
             ProcessorUsage processorUsage = new ProcessorUsage();
             this.processorUsage = processorUsage;
-
-
-            /* chartCPU.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
-            chartCPU.ChartAreas[0].AxisY.LabelStyle.Format = "%"; */
-            //lbProcessorUsage.Text = "Processor usage : " + processorUsage.getCurrentCpuUsage();
             timerCpu.Enabled = true;
         }
 
@@ -42,9 +37,20 @@ namespace Knapsack_problem
 
         private void tbRecursion_Click(object sender, EventArgs e)
         {
+            Calculation(sender,e);
+        }
+
+        private void KnapSackGraphic_Load(object sender, EventArgs e)
+        {
+            lbProcessorUsage.Text = "";
+            lbRamUsage.Text = "";
+        }
+
+        private void Calculation(object sender, EventArgs e)
+        {
             int[] inputNumbers;
             string inputNumbersS = "";
-            string result;
+            string result = "";
             int i = 10;
 
             Random random = new Random();
@@ -57,15 +63,23 @@ namespace Knapsack_problem
                 inputNumbersS = inputNumbersS + "   " + inputNumbers[j].ToString();
             }
 
-            Recursion recursion = new Recursion();
-            result = (recursion.itemsUsed(inputNumbers, 3500, 0));
+            if (sender == tbRecursion)
+            {
+                Recursion recursion = new Recursion();
+                result = (recursion.itemsUsed(inputNumbers, 3500, inputNumbers.Length));
+            } 
+            else
+            {
+                Memoization memoization = new Memoization();
+                result = (memoization.itemsUsed(inputNumbers, 3500, inputNumbers.Length));
+            }
+
             rtbInformation.Text = "Inserted numbers: " + inputNumbersS + "\n\n" + result;
         }
 
-        private void KnapSackGraphic_Load(object sender, EventArgs e)
+        private void btMemoization_Click(object sender, EventArgs e)
         {
-            lbProcessorUsage.Text = "";
-            lbRamUsage.Text = "";
+            Calculation(sender, e);
         }
     }
 }
