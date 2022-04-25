@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartCPU = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btShowCpuUsage = new System.Windows.Forms.Button();
             this.lbProcessorUsage = new System.Windows.Forms.Label();
@@ -41,21 +41,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbRamUsage = new System.Windows.Forms.Label();
             this.btMemoization = new System.Windows.Forms.Button();
+            this.chartindicatorPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbNumbersAmount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartCPU)).BeginInit();
             this.SuspendLayout();
             // 
             // chartCPU
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartCPU.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartCPU.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.chartCPU.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartCPU.Legends.Add(legend2);
             this.chartCPU.Location = new System.Drawing.Point(445, 66);
             this.chartCPU.Name = "chartCPU";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartCPU.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartCPU.Series.Add(series2);
             this.chartCPU.Size = new System.Drawing.Size(331, 79);
             this.chartCPU.TabIndex = 0;
             this.chartCPU.Text = "chart1";
@@ -81,7 +84,7 @@
             // 
             // timerCpu
             // 
-            this.timerCpu.Interval = 2000;
+            this.timerCpu.Interval = 1000;
             this.timerCpu.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // rtbInformation
@@ -131,11 +134,38 @@
             this.btMemoization.UseVisualStyleBackColor = true;
             this.btMemoization.Click += new System.EventHandler(this.btMemoization_Click);
             // 
+            // chartindicatorPanel
+            // 
+            this.chartindicatorPanel.Location = new System.Drawing.Point(445, 53);
+            this.chartindicatorPanel.Name = "chartindicatorPanel";
+            this.chartindicatorPanel.Size = new System.Drawing.Size(331, 5);
+            this.chartindicatorPanel.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Numbers amount:";
+            // 
+            // tbNumbersAmount
+            // 
+            this.tbNumbersAmount.Location = new System.Drawing.Point(119, 50);
+            this.tbNumbersAmount.Name = "tbNumbersAmount";
+            this.tbNumbersAmount.Size = new System.Drawing.Size(40, 20);
+            this.tbNumbersAmount.TabIndex = 11;
+            this.tbNumbersAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumbersAmount_KeyPress);
+            // 
             // KnapSackGraphic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbNumbersAmount);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.chartindicatorPanel);
             this.Controls.Add(this.btMemoization);
             this.Controls.Add(this.lbRamUsage);
             this.Controls.Add(this.label1);
@@ -164,6 +194,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbRamUsage;
         private System.Windows.Forms.Button btMemoization;
+        private System.Windows.Forms.Panel chartindicatorPanel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbNumbersAmount;
     }
 }
 
