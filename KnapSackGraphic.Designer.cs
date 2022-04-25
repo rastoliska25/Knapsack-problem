@@ -44,6 +44,8 @@
             this.chartindicatorPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tbNumbersAmount = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbRequiredSum = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartCPU)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,11 +160,30 @@
             this.tbNumbersAmount.TabIndex = 11;
             this.tbNumbersAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumbersAmount_KeyPress);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Required sum:";
+            // 
+            // tbRequiredSum
+            // 
+            this.tbRequiredSum.Location = new System.Drawing.Point(119, 77);
+            this.tbRequiredSum.Name = "tbRequiredSum";
+            this.tbRequiredSum.Size = new System.Drawing.Size(40, 20);
+            this.tbRequiredSum.TabIndex = 13;
+            this.tbRequiredSum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRequiredSum_KeyPress);
+            // 
             // KnapSackGraphic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbRequiredSum);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbNumbersAmount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chartindicatorPanel);
@@ -197,6 +218,8 @@
         private System.Windows.Forms.Panel chartindicatorPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbNumbersAmount;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbRequiredSum;
     }
 }
 

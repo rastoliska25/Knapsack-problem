@@ -82,10 +82,17 @@ namespace Knapsack_problem
                 return;
             }
 
+            if (tbRequiredSum.Text == "")
+            {
+                MessageBox.Show("please insert Required sum");
+                return;
+            }
+
             int[] inputNumbers;
             string inputNumbersS = "";
             string result = "";
             int numbersCount = Convert.ToInt32(tbNumbersAmount.Text);
+            int requiredSum = Convert.ToInt32(tbRequiredSum.Text);
 
             if (numbersCount > 100)
             {
@@ -106,12 +113,12 @@ namespace Knapsack_problem
             if (sender == tbRecursion)
             {
                 Recursion recursion = new Recursion();
-                result = (recursion.itemsUsed(inputNumbers, 7555, inputNumbers.Length));
+                result = (recursion.itemsUsed(inputNumbers, requiredSum, inputNumbers.Length));
             }
             else
             {
                 Memoization memoization = new Memoization();
-                result = (memoization.itemsUsed(inputNumbers, 7555, inputNumbers.Length));
+                result = (memoization.itemsUsed(inputNumbers, requiredSum, inputNumbers.Length));
             }
 
             rtbInformation.Text = "Inserted numbers: " + inputNumbersS + "\n\n" + result;
@@ -129,6 +136,16 @@ namespace Knapsack_problem
                 e.Handled = true;
                 MessageBox.Show("please insert number from 1 to 100");
                 tbNumbersAmount.Text = "";
+            }
+        }
+
+        private void tbRequiredSum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!Char.IsNumber(e.KeyChar)) && (!(e.KeyChar == (char)8)) && (!(e.KeyChar == (char)13)))
+            {
+                e.Handled = true;
+                MessageBox.Show("please insert number from 1 to 100000");
+                tbRequiredSum.Text = "";
             }
         }
     }
