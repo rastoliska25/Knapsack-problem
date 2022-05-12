@@ -110,6 +110,7 @@ namespace Knapsack_problem
                 inputNumbersS = inputNumbersS + "   " + inputNumbers[j].ToString();
             }
 
+            var watch = System.Diagnostics.Stopwatch.StartNew(); //execution time
             if (sender == tbRecursion)
             {
                 Recursion recursion = new Recursion();
@@ -120,8 +121,8 @@ namespace Knapsack_problem
                 Memoization memoization = new Memoization();
                 result = (memoization.itemsUsed(inputNumbers, requiredSum, inputNumbers.Length));
             }
-
-            rtbInformation.Text = "Inserted numbers: " + inputNumbersS + "\n\n" + result;
+            watch.Stop();
+            rtbInformation.Text = "Inserted numbers: " + inputNumbersS + "\n\n" + result + "\n\n" + "Execution Time: " + watch.ElapsedMilliseconds + " ms";
         }
 
         private void btMemoization_Click(object sender, EventArgs e)
